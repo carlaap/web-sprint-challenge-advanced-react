@@ -17,17 +17,10 @@
 
   ### Tools
 
-<<<<<<< HEAD
   - Node 16.x
   - NPM 8.x (update NPM executing `npm i -g npm`)
   - Unix-like shell (Gitbash/bash/zsh)
   - Chrome >= 98.x
-=======
-- Node 16.x
-- NPM 8.x (update NPM executing `npm i -g npm`)
-- Unix-like shell (Gitbash/bash/zsh)
-- Chrome >= 100.x
->>>>>>> 890a381f4c00e156b82a1809e6867b37e52f8ee0
 
   ❗ Other configurations might work but haven't been tested.
 
@@ -51,11 +44,7 @@
 
   ## MVP
 
-<<<<<<< HEAD
   ### MVP 1, The Grid - Long Explanation
-=======
-### MVP 1, The Grid
->>>>>>> 890a381f4c00e156b82a1809e6867b37e52f8ee0
 
   - Replicate the **functionality and DOM** shown in the prototype linked at the top of this README.
   - Keep your code inside `frontend/components/AppFunctional.js` and `frontend/components/AppClass.js`.
@@ -74,13 +63,9 @@
       (1, 3) (2, 3) (3, 3)
     ```
 
-<<<<<<< HEAD
   ### MVP 1, The Grid - Short Explanation
 
   ❗ ALL TESTS MUST PASS
-=======
-❗ ALL TESTS MUST PASS
->>>>>>> 890a381f4c00e156b82a1809e6867b37e52f8ee0
 
   ### MVP 2, Testing
 
@@ -89,7 +74,6 @@
     - Test that the visible texts in headings, buttons, links... render on the screen.
     - Test that typing on the input results in its value changing to the entered text.
 
-<<<<<<< HEAD
   ### Stretch Goals
 
   - Extract some of the stateful logic into a custom hook at the top of `AppFunctional.js`.
@@ -124,27 +108,3 @@
   - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
   - If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
   - If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
-=======
-### Important Notes
-
-- Inside `AppClass.js` and `AppFunctional` you will find some suggested states and helper functions. Feel free not to use them.
-- You don't need a complicated structure to track the state of the grid, because we aren't storing any information in the cells.
-- Imagine that the grid were simply a one-dimension array broken --only visually-- into three rows.
-- The only component state you need in order to drive the grid is an integer from 0 to 8: **the index the "B" is at.**
-- Other pieces of information, like coordinates, can be derived from that index, and don't need a state of their own.
-- If you want to make life more complicated (or interesting) for yourself, other structures can be used to store the state of the grid:
-
-  ```js
-  // A plain array can be used to drive big grids efficiently:
-  [null, null, null, null, "B", null, null, null, null]
-
-  // 2D arrays or matrices:
-  [[null, null, null], [null, "B", null], [null, null, null]]
-
-  // A string also works, but strings in JS are immutable, which can be inconvenient:
-  "xxxxBxxxx"
-  ```
-
-- "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
-- If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
->>>>>>> 890a381f4c00e156b82a1809e6867b37e52f8ee0

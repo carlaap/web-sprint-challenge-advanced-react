@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
+
+const url = `http://localhost:9000/api/result`
 
 export default function AppFunctional(props) {
+  const [state, setState] = useState({
+    x: 2,
+    y: 2,
+    youMoved: 0,
+    currentIdx: 4,
+    errorMessage: "",
+    stepMessage: "You moved 0 times",
+    grid: ['','','','','B','','','',''],
+    email: "",
+  })
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">

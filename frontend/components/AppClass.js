@@ -3,18 +3,6 @@ import axios from "axios";
 
 const url = `http://localhost:9000/api/result`;
 
-// Suggested initial states
-const initialMessage = "";
-const initialEmail = "";
-const initialSteps = 0;
-const initialIndex = 4; // the index the "B" is at
-
-const initialState = {
-  message: initialMessage,
-  email: initialEmail,
-  index: initialIndex,
-  steps: initialSteps,
-};
 
 export default class AppClass extends React.Component {
   constructor(props) {
@@ -22,14 +10,14 @@ export default class AppClass extends React.Component {
     this.state = {
       x: 2,
       y: 2,
-      youMoved: 0,
-      currentIdx: 4,
+      youMoved: "",
+      currentIdx: "",
       errorMessage: "",
-      stepMessage: "You moved 0 times",
-      grid: ["", "", "", "", "B", "", "", "", ""],
+      stepMessage: "",
       email: "",
     };
   }
+
   //email
   handleInput = (e) => {
     e.preventDefault();
@@ -228,18 +216,6 @@ export default class AppClass extends React.Component {
             {`Coordinates (${this.state.x} ${this.state.y})`}{" "}
           </h3>
           <h3 id="steps">{`You moved ${this.state.youMoved} times`}</h3>
-        </div>
-        <div id="grid">
-          {this.state.grid.map((value, idx) => (
-            <div key={idx} className="square">
-              {value}
-            </div>
-          ))}
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((idx) => (
-            <div key={idx} className={`square${idx === 4 ? " active" : ""}`}>
-              {idx === 4 ? "B" : null}
-            </div>
-          ))}
         </div>
         <div className="info">
           <h3 id="message"> {[this.state.errorMessage]}</h3>
